@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hledej darek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loop to generate many buttons -->
+    <script>
+        const totalButtons = 300; // Number of buttons to generate
+        const uniqueButtonIndex = 0 // Randomly choose the unique button
+
+        for (let i = 0; i < totalButtons; i++) {
+            const button = document.createElement('button');
+
+            if (i === uniqueButtonIndex) {
+                button.textContent = `Hledej darek`;
+                button.addEventListener('click', () => {
+                    window.location.href = `vyhra.html`;
+                });
+            } else {
+                button.textContent = `Hledej darek`;
+                button.addEventListener('click', () => {
+                    window.location.href = `page${i + 1}.html`;
+                });
+            }
+
+            document.body.appendChild(button);
+        }
+    </script>
+
+</body>
+</html>
